@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 // require('dotenv').config();
 
-// app.use("/public", express.static(__dirname + '/public'));
+app.use("/public", express.static(__dirname + '/public'));
 
 // // process.env.MESSAGE_STYLE='uppercase';
 
