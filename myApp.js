@@ -21,7 +21,7 @@ var app = express();
 //     console.log(process.env.MESSAGE_STYLE)
 
 app.get("/", function(req, res) {
-  res.send('Hello Express')
+  res.sendFile(__dirname + "/views/index.html");
 });
 
 
