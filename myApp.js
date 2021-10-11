@@ -20,10 +20,9 @@ var app = express();
 
 //     console.log(process.env.MESSAGE_STYLE)
 
-// app.get("/json", function(req, res) {
-//   var response = "Hello World";
-  console.log("Hello World");
-// });
+app.get("/", function(req, res) {
+  res.send('Hello Express')
+});
 
 
 
