@@ -3,8 +3,8 @@ var express = require('express');
 var app = express();
 // require('dotenv').config();
 
-app.get('/json - ip', function (req, res, next) {
-  console.log("ip", req.ip)
+app.get('/json/:ip', function (req, res, next) {
+  console.log("ip:", req.ip)
   next()
 });
 
