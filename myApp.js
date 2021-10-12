@@ -3,10 +3,7 @@ var express = require('express');
 var app = express();
 // require('dotenv').config();
 
-app.use(function (req, res, next) {
-  console.log(req.method + " " + req.path + " - " + req.ip);
-  next()
-});
+app.use(logger)
 
 // Build a simple logger. For every request, it should log to the console a string taking the following format: method path - ip. 
 // An example would look like this: GET /json - ::ffff:127.0.0.1. 
@@ -38,7 +35,10 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-
+function logger(req, res, next) {
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next()
+};
 
 
 
