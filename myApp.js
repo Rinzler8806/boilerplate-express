@@ -19,6 +19,11 @@ app.get("/now", (req, res, next) => {
 }
 );
 
+app.get("/:word/echo", (req, res) => {
+  var echo = req.params.word;
+  res.json(req.params);
+});
+
 app.use("/public", express.static(__dirname + '/public'));
 
 // // process.env.MESSAGE_STYLE='uppercase';
