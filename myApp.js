@@ -20,8 +20,8 @@ app.get("/now", (req, res, next) => {
 );
 
 app.get("/:word/echo", (req, res) => {
-  var echo = req.params.word;
-  res.json(req.params);
+  const { word } = req.params;
+  res.json({echo: word});
 });
 
 app.use("/public", express.static(__dirname + '/public'));
